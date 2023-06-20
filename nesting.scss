@@ -1,0 +1,46 @@
+:root{
+    --wid:1000px;
+}
+
+
+$wid:1000px;
+@mixin flex($x:flex-start, $y:flex-start){
+    display: flex; justify-content: $x; align-items: $y;
+    @content;
+}
+//     display:flex;
+//     justify-content: space-between;
+//     align-items: center;
+// }
+// 폰트사이즈, 색상, 플렉스,정렬 $변수명 : 값 @mixin{} @include 가져가서 쓸 때 필요한 이름 넣어주기 @mixin 이름{}넣어주기 값을 수정해주려면 수정값을 ()안에 넣어주기
+
+header{
+    padding: 20px 0;
+    width: var(--wid);
+    margin: 0 auto;
+
+    @include flex(space-between,center);
+
+    h1{font-size: 2rem;}
+
+
+
+    nav{
+        a{padding: 0 20px;
+        color: red;}
+}}
+
+
+
+main{ width: $wid;
+    margin: 0 auto;}
+
+.spot{
+    figure{
+        margin: 0;
+        @include flex(space-between){
+            flex-wrap: wrap;
+        }
+        img{width: 30%;}
+    }
+}
